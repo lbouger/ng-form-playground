@@ -43,7 +43,7 @@
         </div>
 
         <div class="control-group" ng-class="{error:  myForm.night.$dirty && myForm.night.$invalid}">
-            <label class="control-label">Nombre de nuits * <p>55.65 € par nuit</p></label>
+            <label class="control-label">Nombre de nuits * <p>{{unitPrice}} € par nuit</p></label>
             <input name="night" type="number" ng-model="user.night" placeholder="5 nuits maximum" min="1" max="5" required ng-change="calculate(user.night)">
             <p class="help-block" ng-show="myForm.night.$error.min || (myForm.night.$error.required && myForm.dirty)">Vous devez réserver au moins une nuit</p>
             <p class="help-block" ng-show="myForm.night.$error.max">Vous ne pouvez pas réserver plus de 5 nuits</p>
