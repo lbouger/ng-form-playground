@@ -33,7 +33,7 @@
         <div class="control-group" ng-class="{error : myForm.email2.$invalid}">
             <label class="control-label">Confirmez email</label>
             <input name="email2" type="email" ng-model="user.email2" ng-change="checkEmail()">
-            <p class="help-block" ng-show="myForm.email2.$error.samemail">Les mots de passe saisis ne sont pas identiques</p>
+            <p class="help-block" ng-show="myForm.email2.$error.samemail">Les email saisis ne sont pas identiques</p>
         </div>
 
         <div class="control-group" ng-class="{error : myForm.arrival.$dirty && myForm.arrival.$error.required}">
@@ -52,6 +52,7 @@
         <div class="control-group" ng-class="{error : myForm.comment.$error.maxlength}">
             <label class="control-label">Commentaires</label>
             <textarea name="comment" type="text" ng-model="user.comment" ng-maxlength="50"></textarea>
+    		<p class="help-block" ng-show="user.comment.length>0">{{50-user.comment.length}} restants</p>
             <p class="help-block" ng-show="myForm.comment.$error.maxlength">Votre commentaire doit comporter moins de 50 caractères</p>
         </div>
 
